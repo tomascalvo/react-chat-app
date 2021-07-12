@@ -1,0 +1,17 @@
+.messages {
+    padding: 5% 0;
+    overflow: auto;
+    flex: auto;
+  }
+
+  @media (max-width: 380px) {
+    body {
+      overflow: hidden;
+    }
+    .messages {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+  }
