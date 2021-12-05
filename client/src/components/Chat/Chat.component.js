@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import queryString from "query-string"; //this module retrieves data from the url
 import io from "socket.io-client";
+import dotenv from 'dotenv';
 
 import "./Chat.css";
 
@@ -9,10 +10,12 @@ import Messages from "../Messages/Messages.component";
 import Input from "../Input/Input.component";
 import TextContainer from "../TextContainer/TextContainer.component";
 
+dotenv.config();
+
 let socket;
 
 const Chat = ({ location }) => {
-  const ENDPOINT = "https://evasive-chat-app.herokuapp.com/";
+  const ENDPOINT = process.env.REACT_APP_ENDPOINT;
   // const ENDPOINT = "localhost:5000";
 
   const [name, setName] = useState("");
